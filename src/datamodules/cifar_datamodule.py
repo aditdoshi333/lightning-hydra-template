@@ -20,7 +20,7 @@ class CIFAR10DataModule(LightningDataModule):
         self.save_hyperparameters(logger=False)
 
         self.transform = transforms.Compose(
-            [
+            [   transforms.Resize(244),
                 transforms.ToTensor(),
                 transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)),
             ]
