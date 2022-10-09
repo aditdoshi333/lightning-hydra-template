@@ -16,3 +16,8 @@ WORKDIR /opt/workspace
 ADD . .
 
 RUN pip3 install --no-cache-dir -r requirements.deployment.txt
+
+# ENTRY POINT
+
+ENTRYPOINT ["python3", "/opt/workspace/src/demo.py"]
+

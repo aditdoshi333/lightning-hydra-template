@@ -67,6 +67,7 @@ def demo(cfg: DictConfig) -> Tuple[dict, dict]:
         inputs=[im],
         outputs=[gr.Label(num_top_classes=10)],
         live=True,
+        server_port = 8090
     )
 
     demo.launch()
