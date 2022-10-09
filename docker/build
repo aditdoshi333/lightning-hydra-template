@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker build -t session_4_new:latest -f docker/Dockerfile .

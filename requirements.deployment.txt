@@ -1,0 +1,10 @@
+
+gradio
+
+# --------- hydra --------- #
+hydra-core==1.2.0
+hydra-colorlog==1.2.0
+
+
+# --------- others --------- #
+pyrootutils     # standardizing the project root setup

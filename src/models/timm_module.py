@@ -56,7 +56,7 @@ class TIMMLitModule(LightningModule):
         self.val_acc_best = MaxMetric()
        
         # resize tensor to 244
-        self.resize_transform = transforms.Resize((224,))
+        self.resize_transform = transforms.Resize((244, 244))
 
         # normalize tensor
         self.normalize_transform = transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
