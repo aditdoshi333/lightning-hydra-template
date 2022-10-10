@@ -14,7 +14,11 @@ import torch
 import hydra
 import gradio as gr
 from omegaconf import DictConfig
+import os
 
+# SETTING ENV VARIABLE FOR GRADIO SERVER PORT
+
+os.environ["GRADIO_SERVER_PORT"] = "8090"
 
 
 def get_cifar_class_label(idx):
@@ -67,10 +71,9 @@ def demo(cfg: DictConfig) -> Tuple[dict, dict]:
         inputs=[im],
         outputs=[gr.Label(num_top_classes=10)],
         live=True,
-        server_port = 8090
     )
 
-    demo.launch()
+    demo.launch(server_port=8090, server_name="0.0.0.0")
 
 @hydra.main(
     version_base="1.2", config_path=root / "configs", config_name="demo_scripted.yaml"
